@@ -43,6 +43,7 @@
             background-color: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            margin-bottom: 80px; /* Sayfanın alt kısmındaki footer'ı görmek için boşluk */
         }
         ul {
             list-style-type: none;
@@ -66,6 +67,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 14px;
         }
         .accordion {
             background-color: #8a2be2;
@@ -171,10 +173,13 @@
         </section>
         <section id="documents">
             <h2>Belgeler</h2>
-            <ul>
-                <li><a href="proje_dokumani.pdf">Proje Dokümanı</a></li>
-                <li><a href="teknik_rapor.pdf">Teknik Rapor</a></li>
-            </ul>
+            <button class="accordion">Belgeler</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="proje_dokumani.pdf">Proje Dokümanı</a></li>
+                    <li><a href="teknik_rapor.pdf">Teknik Rapor</a></li>
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
@@ -199,4 +204,5 @@
     </script>
 </body>
 </html>
+
 
