@@ -15,22 +15,22 @@
         header {
             background-color: #6a0dad;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
         }
         h1, h2 {
             margin: 0;
-            padding: 10px;
+            padding: 5px;
         }
         nav {
             background-color: #8a2be2;
-            padding: 10px 20px;
+            padding: 5px 20px;
             text-align: center;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
             font-size: 16px;
         }
         nav a:hover {
@@ -62,11 +62,49 @@
             background-color: #6a0dad;
             color: white;
             text-align: center;
-            padding: 10px;
+            padding: 5px;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
+        .accordion {
+            background-color: #8a2be2;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .accordion:hover {
+            background-color: #7a1cc9;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            font-size: 20px;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border-left: 4px solid #6a0dad;
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -86,27 +124,79 @@
         </section>
         <section id="diagrams">
             <h2>Diagramlar</h2>
-            <ul>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\Yazılımda Güncel konular Swot Analizi (2).pdf">SWOT Analizi</a></li>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\Yazılımda Güncel Konular Use Case Diagram.drawio (2).pdf">Use Case Diagramı</a></li>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\ClassDiagram.drawio.pdf">Class Diagramı</a></li>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\ER Diagram 2.drawio.pdf">ER Diagramı</a></li>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\activity diagram yazılım güncel konular.png">Activity Diagramı</a></li>
-                <li><a href="C:\Users\rumey\Downloads\DURUM (STATE)ve Sequence Diagramı.pdf">Sequence ve State Diagramı</a></li>
-                <li><a href="C:\Users\rumey\Downloads\Haritalarla_Matematik_Project_Flowchart.png">Flowchart</a></li>
-                <li><a href="C:\Users\rumey\Downloads\Duzenlenmis_Haritalarla_Matematik_Gantt_Diyagrami.png">Gantt Diagramı</a></li>
-            </ul>
+            <button class="accordion">Gereksinim Analizi</button>
+            <div class="panel">
+                <a href="gereksinim_analizi.png">Gereksinim Analizi Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">SWOT Analizi</button>
+            <div class="panel">
+                <a href="swot_analizi.png">SWOT Analizi Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">Use Case Diagramı</button>
+            <div class="panel">
+                <a href="use_case_diagram.png">Use Case Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">Class Diagramı</button>
+            <div class="panel">
+                <a href="class_diagram.png">Class Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">ER Diagramı</button>
+            <div class="panel">
+                <a href="er_diagram.png">ER Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">Activity Diagramı</button>
+            <div class="panel">
+                <a href="activity_diagram.png">Activity Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">Sequence Diagramı</button>
+            <div class="panel">
+                <a href="sequence_diagram.png">Sequence Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">State Diagramı</button>
+            <div class="panel">
+                <a href="state_diagram.png">State Diagramını Görüntüle</a>
+            </div>
+
+            <button class="accordion">Flowchart</button>
+            <div class="panel">
+                <a href="flowchart.png">Flowchart Diagramını Görüntüle</a>
+            </div>
         </section>
         <section id="documents">
             <h2>Belgeler</h2>
             <ul>
-                <li><a href="C:\Users\rumey\Desktop\Yazılımda Güncel KONULAR Proje\Yazılımda Güncel Konular Yazılım Gereksinim Analizi.pdf">Gereksinim Analizi</a></li>
-                <li><a href="C:\Users\rumey\Desktop\Haftalık Proje Zaman Planı.docx">Haftalık Proje Planı</a></li>
+                <li><a href="proje_dokumani.pdf">Proje Dokümanı</a></li>
+                <li><a href="teknik_rapor.pdf">Teknik Rapor</a></li>
             </ul>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Haritalarla Matematik Projesi. Tüm hakları saklıdır.</p>
     </footer>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
+
